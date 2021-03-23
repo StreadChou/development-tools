@@ -26,7 +26,7 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="timeTools/index">
+          <q-item clickable v-ripple to="/timeTools/index">
             <q-item-section avatar>
               <q-icon name="query_builder"/>
             </q-item-section>
