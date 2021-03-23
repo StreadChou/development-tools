@@ -1,17 +1,5 @@
 <template>
   <q-layout view="hHh Lpr lff" class="shadow-2 rounded-borders">
-    <q-header elevated class="bg-black">
-      <q-bar class="q-electron-drag">
-        <q-btn dense flat round icon="lens" size="8.5px" color="red" @click="closeApp"/>
-        <q-btn dense flat round icon="lens" size="8.5px" color="yellow" @click="minimize"/>
-        <q-btn dense flat round icon="lens" size="8.5px" color="green" @click="maximize"/>
-        <div class="col text-center text-weight-bold">
-          My-App
-        </div>
-      </q-bar>
-
-    </q-header>
-
     <q-drawer
       v-model="drawer"
       show-if-above
