@@ -36,6 +36,16 @@
             </q-item-section>
           </q-item>
 
+          <q-item clickable v-ripple to="/processTools/index">
+            <q-item-section avatar>
+              <q-icon name="schema"/>
+            </q-item-section>
+
+            <q-item-section>
+              Process Tools
+            </q-item-section>
+          </q-item>
+
 
           <q-separator/>
 
