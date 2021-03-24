@@ -8,15 +8,11 @@
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
-            <span class="row items-center">
-              Now Timestamp(Click Copy):
-            </span>
+        <span class="row items-center">Now Timestamp(Click Copy):</span>
         <q-btn flat color="primary" :label="nowTimestamp" @click="copyPrototype('nowTimestamp')"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
-            <span class="row items-center">
-              Timestamp to Time:
-            </span>
+        <span class="row items-center">Timestamp to Time:</span>
         <q-input standout="" dense v-model="timestampInput" type="email" suffix="Unix Timestamp">
           <template v-slot:after>
             <q-btn color="primary" label="Change" @click="changeTimestamp"/>
