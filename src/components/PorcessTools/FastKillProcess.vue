@@ -2,35 +2,34 @@
   <q-card bordered class="full-width">
     <q-card-section>
       <div class="text-h6">
-        Fast Kill Process
+        {{ $t('component.processTools.fastKillProcess.title') }}
       </div>
       <div class="text-subtitle2">
-        Please enter the name of the process( EG: 'java' or 'php' or 'node')
+        {{ $t('component.processTools.fastKillProcess.subtitle') }}
       </div>
     </q-card-section>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">
-          Process Name:
+          {{ $t('comm.description.processName') }}:
         </span>
-        <q-input standout="" dense v-model="process" type="email"></q-input>
+        <q-input standout="" dense v-model="process"></q-input>
         <span class="row items-center">
-          You will do: ps -ef | grep '{{ process }}' | awk '{print $2}' | xargs kill -9
+          {{ $t('comm.action.youWillRun') }}: ps -ef | grep '{{ process }}' | awk '{print $2}' | xargs kill -9
         </span>
       </div>
     </q-card-section>
     <q-card-section class="q-gutter-sm q-pl-lg">
-      tips: This application is built using node, if you kill all node processes, this application will no longer work
-      until you restart the application.
+      {{ $t('tips') }}:{{ $t('component.processTools.fastKillProcess.tips') }}
     </q-card-section>
     <q-separator/>
     <q-card-actions>
       <q-btn flat color="primary" @click="runCommand">
-        Run Command
+        {{ $t('comm.action.runCommand') }}
       </q-btn>
       <q-btn flat @click="process = ''">
-        Clear Input
+        {{ $t('comm.action.clearInput') }}
       </q-btn>
     </q-card-actions>
   </q-card>

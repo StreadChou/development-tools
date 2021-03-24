@@ -21,40 +21,28 @@
             <q-item-section avatar>
               <q-icon name="home"/>
             </q-item-section>
-
-            <q-item-section>
-              Home
-            </q-item-section>
+            <q-item-section>{{ $t('nav.home') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="star"/>
             </q-item-section>
-
-            <q-item-section>
-              Favourite
-            </q-item-section>
+            <q-item-section>{{ $t('nav.favourite') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple to="/timeTools/index">
             <q-item-section avatar>
               <q-icon name="query_builder"/>
             </q-item-section>
-
-            <q-item-section>
-              Time Tools
-            </q-item-section>
+            <q-item-section>{{ $t('nav.timeTools') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple to="/processTools/index">
             <q-item-section avatar>
               <q-icon name="schema"/>
             </q-item-section>
-
-            <q-item-section>
-              Process Tools
-            </q-item-section>
+            <q-item-section>{{ $t('nav.processTools') }}</q-item-section>
           </q-item>
 
 
@@ -64,10 +52,7 @@
             <q-item-section avatar>
               <q-icon name="settings"/>
             </q-item-section>
-
-            <q-item-section>
-              Setting
-            </q-item-section>
+            <q-item-section>{{ $t('nav.setting') }}</q-item-section>
           </q-item>
         </q-list>
       </q-scroll-area>

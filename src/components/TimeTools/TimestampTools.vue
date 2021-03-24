@@ -1,30 +1,31 @@
 <template>
   <q-card bordered class="full-width">
     <q-card-section>
-      <div class="text-h6">
-        Timestamp Tools
-      </div>
+      <div class="text-h6">{{ $t('component.timeTools.timestampTools.title') }}</div>
     </q-card-section>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
-        <span class="row items-center">Now Timestamp(Click Copy):</span>
+        <span class="row items-center">
+          {{ $t('component.timeTools.timestampTools.nowTimestamp') }}
+          ({{ $t('comm.action.clickToCopy') }}):
+        </span>
         <q-btn flat color="primary" :label="nowTimestamp" @click="copyPrototype('nowTimestamp')"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
-        <span class="row items-center">Timestamp to Time:</span>
-        <q-input standout="" dense v-model="timestampInput" type="email" suffix="Unix Timestamp">
+        <span class="row items-center">{{ $t('component.timeTools.timestampTools.timestampToTime') }}:</span>
+        <q-input standout="" dense v-model="timestampInput" :suffix="$t('comm.time.unixTimestamp')">
           <template v-slot:after>
-            <q-btn color="primary" label="Change" @click="changeTimestamp"/>
+            <q-btn color="primary" :label="$t('comm.action.transform')" @click="changeTimestamp"/>
           </template>
         </q-input>
         <q-btn flat color="primary" :label="this.timestampResult" @click="copyPrototype('timestampResult')"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
-        <span class="row items-center">Time to Timestamp:</span>
-        <q-input standout="" dense v-model="timeInput" type="email" :suffix="this.timeInputType">
+        <span class="row items-center">{{ $t('component.timeTools.timestampTools.timeToTimestamp') }}:</span>
+        <q-input standout="" dense v-model="timeInput" :suffix="this.timeInputType">
           <template v-slot:after>
-            <q-btn color="primary" label="Change"/>
+            <q-btn color="primary" :label="$t('comm.action.transform')" @click="changeTime"/>
           </template>
         </q-input>
         <q-btn flat dense color="primary" :label="timeResult" @click="copyPrototype('timeResult')"/>

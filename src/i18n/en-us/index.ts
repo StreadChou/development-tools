@@ -1,7 +1,13 @@
-// This is just an example,
-// so you can safely delete all default props below
+import component from './component';
+import comm from './comm';
+import nav from './nav';
 
 export default {
   failed: 'Action failed',
-  success: 'Action was successful'
+  success: 'Action was successful',
+  tips: "Tips",
+
+  component: component,
+  comm: comm,
+  nav: nav,
 };
