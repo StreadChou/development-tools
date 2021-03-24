@@ -60,7 +60,7 @@
 
           <q-separator/>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="/setting/Index">
             <q-item-section avatar>
               <q-icon name="settings"/>
             </q-item-section>
