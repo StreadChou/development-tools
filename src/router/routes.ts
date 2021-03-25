@@ -8,7 +8,8 @@ const routes: RouteConfig[] = [
       {path: '', component: () => import('pages/Index.vue')},
       {path: 'timeTools/index', component: () => import('pages/TimeTools/Index.vue')},
       {path: 'processTools/Index', component: () => import('pages/ProcessTools/Index.vue')},
-      {path: 'setting/Index', component: () => import('pages/Setting/Index.vue')}
+      {path: 'setting/Index', component: () => import('pages/Setting/Index.vue')},
+      {path: 'more/index', component: () => import('pages/MoreTools/Index.vue')}
     ]
   },
 

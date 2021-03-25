@@ -4,4 +4,6 @@ export default {
   youWillRun: "You Will Run",
   runCommand: "Run Command",
   clearInput: "Clear Input",
+  generate: "Generate",
+  generateResult: "Generate Result",
 }
