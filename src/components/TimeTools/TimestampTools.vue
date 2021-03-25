@@ -69,14 +69,14 @@ export default {
           this.$q.notify({
             color: 'positive',
             position: 'top-right',
-            message: "copy success"
+            message: this.$t('success'),
           })
         })
         .catch(() => {
           this.$q.notify({
             color: 'negative',
             position: 'top-right',
-            message: "copy error"
+            message: this.$t('failed'),
           })
         })
     }
