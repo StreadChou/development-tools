@@ -34,7 +34,7 @@
         </q-input>
       </div>
     </q-card-section>
-    <q-card-section class="q-py-xs">
+    <q-card-section class="q-pl-lg">
       <q-btn class="full-width" color="primary" :label="$t('comm.action.generate')" @click="generate"/>
     </q-card-section>
     <q-card-section class="q-gutter-sm q-pl-lg">
