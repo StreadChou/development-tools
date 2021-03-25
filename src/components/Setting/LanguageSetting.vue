@@ -1,16 +1,9 @@
 <template>
-  <!-- ...... -->
-  <q-select
-    v-model="lang"
-    :options="langOptions"
-    label="Language Setting"
-    dense
-    borderless
-    emit-value
-    map-options
-    options-dense
-    style="min-width: 150px"
-  />
+  <q-select v-model="lang" :options="langOptions" standout="bg-teal text-white" dense emit-value map-options>
+    <template v-slot:before>
+      <span class="text-h6">{{ $t('component.setting.languageSetting.label') }}: </span>
+    </template>
+  </q-select>
 </template>
 
 

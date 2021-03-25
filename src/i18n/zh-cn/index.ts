@@ -1,6 +1,7 @@
 import component from './component';
 import comm from './comm'
 import nav from './nav';
+import page from './page';
 
 export default {
   failed: '操作失败',
@@ -10,4 +11,5 @@ export default {
   component: component,
   comm: comm,
   nav: nav,
+  page: page,
 };
