@@ -28,6 +28,9 @@
       <q-btn flat color="primary" @click="runCommand">
         {{ $t('comm.action.runCommand') }}
       </q-btn>
+      <q-btn flat color="secondary" @click="copyCommand">
+        {{ $t('comm.action.clickToCopy') }}
+      </q-btn>
       <q-btn flat @click="process = ''">
         {{ $t('comm.action.clearInput') }}
       </q-btn>
@@ -36,6 +39,8 @@
 </template>
 
 <script>
+import {copyToClipboard} from "quasar";
+
 const child_process = require('child_process');
 
 export default {
@@ -59,10 +64,28 @@ export default {
           this.$q.notify({
             color: 'positive',
             position: 'top-right',
-            message: "run command success"
+            message: this.$t('success'),
           })
         }
       });
+    },
+    copyCommand() {
+      let command = `ps -ef | grep '${this.process}' | awk '{print $2}' | xargs kill -9`;
+      copyToClipboard(command)
+        .then(() => {
+          this.$q.notify({
+            color: 'positive',
+            position: 'top-right',
+            message: this.$t('success'),
+          })
+        })
+        .catch(() => {
+          this.$q.notify({
+            color: 'negative',
+            position: 'top-right',
+            message: this.$t('failed'),
+          })
+        })
     }
   }
 }
