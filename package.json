@@ -13,6 +13,7 @@
     "@vue/composition-api": "^1.0.0-rc.3",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "crypto-random-string": "^3.3.1",
     "moment": "^2.29.1",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.24.2"
