@@ -14,7 +14,7 @@
         <span class="row items-center">
           {{ $t('comm.description.processName') }}:
         </span>
-        <q-input standout="" dense v-model="process"></q-input>
+        <q-input standout="" dense v-model="process" clearable></q-input>
         <span class="row items-center">
           {{ $t('comm.action.youWillRun') }}: ps -ef | grep '{{ process }}' | awk '{print $2}' | xargs kill -9
         </span>
@@ -30,9 +30,6 @@
       </q-btn>
       <q-btn flat color="secondary" @click="copyCommand">
         {{ $t('comm.action.clickToCopy') }}
-      </q-btn>
-      <q-btn flat @click="process = ''">
-        {{ $t('comm.action.clearInput') }}
       </q-btn>
     </q-card-actions>
   </q-card>
@@ -52,7 +49,7 @@ export default {
   },
   methods: {
     runCommand() {
-      let command = `ps -ef | grep '${this.process}' | awk '{print $2}' | xargs kill -9`;
+      let command = this.generateCommandForMac();
       child_process.exec(command, (error, stdout, stderr) => {
         if (!!error) {
           this.$q.notify({
@@ -70,7 +67,7 @@ export default {
       });
     },
     copyCommand() {
-      let command = `ps -ef | grep '${this.process}' | awk '{print $2}' | xargs kill -9`;
+      let command = this.generateCommandForMac();
       copyToClipboard(command)
         .then(() => {
           this.$q.notify({
@@ -86,6 +83,11 @@ export default {
             message: this.$t('failed'),
           })
         })
+    },
+
+    // generate mac command
+    generateCommandForMac() {
+      return `ps -ef | grep '${this.process}' | awk '{print $2}' | xargs kill -9`;
     }
   }
 }
