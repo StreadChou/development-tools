@@ -24,7 +24,7 @@ export default {
   watch: {
     lang(lang) {
       this.$i18n.locale = lang
-      this.$q.cookies.set('locale', lang);
+      localStorage.setItem("locale", lang)
     }
   }
 }
