@@ -35,13 +35,13 @@
       </div>
     </q-card-section>
     <q-card-section class="q-pl-lg">
-      <q-btn class="full-width" color="primary" :label="$t('comm.action.generate')" @click="generate"/>
+      <q-btn class="full-width" color="primary" :label="$t('verb.generate')" @click="generate"/>
     </q-card-section>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">
-          {{ $t('comm.action.generateResult') }}:
-          ({{ $t('comm.action.clickToCopy') }}):
+          {{ $t('tip.generateResult') }}:
+          ({{ $t('verb.clickToCopy') }}):
         </span>
         <q-btn flat color="primary" style="text-transform: none!important;" :label="result"
                @click="copyPrototype('result')"/>

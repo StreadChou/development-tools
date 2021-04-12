@@ -1,5 +1,4 @@
 import component from './component';
-import comm from './comm';
 import nav from './nav';
 import page from './page';
 import noun from './common/noun';
@@ -12,7 +11,6 @@ export default {
   tips: "Tips",
 
   component: component,
-  comm: comm,
   nav: nav,
   page: page,
 
