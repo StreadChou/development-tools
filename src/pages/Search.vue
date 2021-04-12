@@ -17,7 +17,7 @@
     </div>
     <div v-else class="row scroll-y full-width search-layout-bottom q-pt-lg bg-grey-4">
       <div class="q-px-lg q-pb-lg full-width">
-        {{$t('page.search.noResult')}}
+        {{ $t('page.search.noResult') }}
       </div>
     </div>
   </q-page>
@@ -33,11 +33,15 @@
 
 <script>
 import TimestampTools from "../components/TimeTools/TimestampTools";
+import FastKillProcess from "../components/PorcessTools/FastKillProcess";
 import ComponentMap from "../ComponentMap";
 
 export default {
   name: "Search",
-  components: {TimestampTools},
+  components: {
+    TimestampTools,
+    FastKillProcess,
+  },
   data() {
     return {
       searchInput: "",
@@ -56,6 +60,7 @@ export default {
           this.searchComponents.push(ele.component);
         }
       })
+      console.log(this.searchComponents);
     },
     componentMapSearch(ele) {
       let locale = this.$i18n.locale;
