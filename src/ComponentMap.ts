@@ -19,5 +19,6 @@ function fastInject(component: string, path: string) {
 
 fastInject("TimestampTools", "timeTools/timestampTools");
 fastInject("FastKillProcess", "processTools/fastKillProcess");
+fastInject("RandomString", "moreTools/randomString");
 
 export default ComponentMap;

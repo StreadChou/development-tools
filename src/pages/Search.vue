@@ -34,6 +34,7 @@
 <script>
 import TimestampTools from "../components/TimeTools/TimestampTools";
 import FastKillProcess from "../components/PorcessTools/FastKillProcess";
+import RandomString from "../components/MoreTools/RandomString";
 import ComponentMap from "../ComponentMap";
 
 export default {
@@ -41,6 +42,7 @@ export default {
   components: {
     TimestampTools,
     FastKillProcess,
+    RandomString,
   },
   data() {
     return {

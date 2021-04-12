@@ -1,7 +1,8 @@
 export default {
   title: "随机字符串生成",
-  selectLabel: "请选择一种随机模式",
+  keywords: ["随机字符串生成", '随机数'],
 
+  selectLabel: "请选择一种随机模式",
   base64Des: "",
   urlSafeDes: "",
   numericDes: "仅数字 [0-9]",

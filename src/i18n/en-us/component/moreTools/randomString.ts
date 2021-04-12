@@ -1,7 +1,8 @@
 export default {
   title: "Random String Generate",
-  selectLabel: "Please select a type, and then generate",
+  keywords: ["Random String Generate", 'Random Number'],
 
+  selectLabel: "Please select a type, and then generate",
   base64Des: "",
   urlSafeDes: "",
   numericDes: "Only Number [0-9]",
