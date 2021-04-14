@@ -18,10 +18,10 @@ class OperationUtils {
 
   copyTxt(txt: string) {
     copyToClipboard(txt ?? "").then(() => {
-      let successString: string = (i18n.t("tip.copySuccess") ?? "success").toString();
+      let successString: string = (i18n.t("tips.copySuccess") ?? "success").toString();
       notifyUtils.successTips(successString);
     }).catch(() => {
-      let failedString: string = (i18n.t("tip.copyFailed") ?? "success").toString();
+      let failedString: string = (i18n.t("tips.copyFailed") ?? "success").toString();
       notifyUtils.failedTips(failedString);
     })
   }
@@ -29,10 +29,10 @@ class OperationUtils {
   runCommand(command: string) {
     child_process.exec(command, (error: ExecException, stdout: string, stderr: string) => {
       if (!error) {
-        let successString: string = (i18n.t("tip.commandRunSuccess") ?? "success").toString();
+        let successString: string = (i18n.t("tips.commandRunSuccess") ?? "success").toString();
         notifyUtils.successTips(successString);
       } else {
-        let failedString: string = (i18n.t("tip.commandRunFailed") ?? "success").toString();
+        let failedString: string = (i18n.t("tips.commandRunFailed") ?? "success").toString();
         let subTxt = stderr + ":" + stdout
         notifyUtils.failedTips(failedString, subTxt);
       }

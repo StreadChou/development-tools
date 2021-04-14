@@ -1,7 +1,7 @@
 <template>
   <q-page v-if="nowSearch" class="full-width full-height">
     <div class="q-pt-lg q-px-lg">
-      <q-input standout="" :label="$t('tip.enterSearchContent')" v-on:keyup.enter="search" dense v-model="searchInput">
+      <q-input standout="" :label="$t('tips.enterSearchContent')" v-on:keyup.enter="search" dense v-model="searchInput">
         <template v-slot:after>
           <q-btn color="primary" :label="$t('verb.search')" @click="search"/>
         </template>
@@ -32,9 +32,9 @@
 </template>
 
 <script>
-import TimestampTools from "../components/TimeTools/TimestampTools";
-import FastKillProcess from "../components/PorcessTools/FastKillProcess";
-import RandomString from "../components/MoreTools/RandomString";
+import TimestampTools from "../components/tools/timeTools/TimestampTools";
+import FastKillProcess from "../components/tools/processTools/FastKillProcess";
+import RandomString from "../components/tools/moreTools/RandomString";
 import ComponentMap from "../ComponentMap";
 
 export default {

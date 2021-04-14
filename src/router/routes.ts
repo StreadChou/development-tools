@@ -7,10 +7,10 @@ const routes: RouteConfig[] = [
     children: [
       {path: '', component: () => import('pages/Index.vue')},
       {path: 'search', component: () => import('pages/Search.vue')},
-      {path: 'timeTools/index', component: () => import('pages/TimeTools/Index.vue')},
-      {path: 'processTools/Index', component: () => import('pages/ProcessTools/Index.vue')},
-      {path: 'setting/Index', component: () => import('pages/Setting/Index.vue')},
-      {path: 'more/index', component: () => import('pages/MoreTools/Index.vue')},
+      {path: 'timeTools/index', component: () => import('pages/timeTools/Index.vue')},
+      {path: 'processTools/Index', component: () => import('pages/processTools/Index.vue')},
+      {path: 'setting/Index', component: () => import('pages/setting/Index.vue')},
+      {path: 'moreTools/index', component: () => import('pages/moreTools/Index.vue')},
     ]
   },
 

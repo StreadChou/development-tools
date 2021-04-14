@@ -1,20 +1,16 @@
-import component from './component';
-import nav from './nav';
 import page from './page';
+import components from './components';
 import noun from './common/noun';
 import verb from './common/verb';
-import tip from './common/tip';
+import tips from './common/tips';
 
 export default {
-  failed: '操作失败',
-  success: '操作成功',
-  tips: "提示",
-
-  component: component,
-  nav: nav,
   page: page,
-
+  components: components,
   noun: noun,
   verb: verb,
-  tip: tip,
+  tips: tips,
+
+  failed: '操作失败',
+  success: '操作成功',
 };

@@ -21,35 +21,35 @@
             <q-item-section avatar>
               <q-icon name="home"/>
             </q-item-section>
-            <q-item-section>{{ $t('nav.home') }}</q-item-section>
+            <q-item-section>{{ $t('page.navigation.home') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="star"/>
             </q-item-section>
-            <q-item-section>{{ $t('nav.favourite') }}</q-item-section>
+            <q-item-section>{{ $t('page.navigation.favourite') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple to="/timeTools/index">
             <q-item-section avatar>
               <q-icon name="query_builder"/>
             </q-item-section>
-            <q-item-section>{{ $t('nav.timeTools') }}</q-item-section>
+            <q-item-section>{{ $t('page.navigation.timeTools') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple to="/processTools/index">
             <q-item-section avatar>
               <q-icon name="schema"/>
             </q-item-section>
-            <q-item-section>{{ $t('nav.processTools') }}</q-item-section>
+            <q-item-section>{{ $t('page.navigation.processTools') }}</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="/more/index">
+          <q-item clickable v-ripple to="/moreTools/index">
             <q-item-section avatar>
               <q-icon name="more"/>
             </q-item-section>
-            <q-item-section>{{ $t('nav.moreTools') }}</q-item-section>
+            <q-item-section>{{ $t('page.navigation.moreTools') }}</q-item-section>
           </q-item>
 
 
@@ -59,7 +59,7 @@
             <q-item-section avatar>
               <q-icon name="settings"/>
             </q-item-section>
-            <q-item-section>{{ $t('nav.setting') }}</q-item-section>
+            <q-item-section>{{ $t('page.navigation.setting') }}</q-item-section>
           </q-item>
         </q-list>
       </q-scroll-area>
