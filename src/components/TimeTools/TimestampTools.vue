@@ -10,7 +10,7 @@
           {{ $t('component.timeTools.timestampTools.nowTimestamp') }}
           ({{ $t('verb.clickToCopy') }}):
         </span>
-        <q-btn flat color="primary" :label="nowTimestamp" @click="copyPrototype('nowTimestamp')"/>
+        <q-btn flat color="primary" :label="nowTimestamp" @click="$utils.operationUtils.copyTxt(nowTimestamp)"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">{{ $t('component.timeTools.timestampTools.timestampToTime') }}:</span>
@@ -19,7 +19,8 @@
             <q-btn color="primary" :label="$t('verb.transform')" @click="changeTimestamp"/>
           </template>
         </q-input>
-        <q-btn flat color="primary" :label="this.timestampResult" @click="copyPrototype('timestampResult')"/>
+        <q-btn flat color="primary" :label="this.timestampResult"
+               @click="$utils.operationUtils.copyTxt(timestampResult)"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">{{ $t('component.timeTools.timestampTools.timeToTimestamp') }}:</span>
@@ -28,14 +29,13 @@
             <q-btn color="primary" :label="$t('verb.transform')" @click="changeTime"/>
           </template>
         </q-input>
-        <q-btn flat dense color="primary" :label="timeResult" @click="copyPrototype('timeResult')"/>
+        <q-btn flat dense color="primary" :label="timeResult" @click="$utils.operationUtils.copyTxt(timeResult)"/>
       </div>
     </q-card-section>
   </q-card>
 </template>
 
 <script>
-import {copyToClipboard} from 'quasar'
 import moment from 'moment'
 
 export default {
@@ -62,24 +62,6 @@ export default {
     changeTime() {
       this.timeResult = Math.floor(moment(this.timeInput).valueOf() / 1000);
     },
-
-    copyPrototype(prototype) {
-      copyToClipboard(this[prototype])
-        .then(() => {
-          this.$q.notify({
-            color: 'positive',
-            position: 'top-right',
-            message: this.$t('success'),
-          })
-        })
-        .catch(() => {
-          this.$q.notify({
-            color: 'negative',
-            position: 'top-right',
-            message: this.$t('failed'),
-          })
-        })
-    }
   },
   created() {
     // GET NOW TIMESTAMP

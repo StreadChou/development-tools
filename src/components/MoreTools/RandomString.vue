@@ -44,7 +44,7 @@
           ({{ $t('verb.clickToCopy') }}):
         </span>
         <q-btn flat color="primary" style="text-transform: none!important;" :label="result"
-               @click="copyPrototype('result')"/>
+               @click="$utils.operationUtils.copyTxt(result)"/>
       </div>
     </q-card-section>
   </q-card>
@@ -105,23 +105,6 @@ export default {
     generate() {
       this.result = cryptoRandomString({length: this.length, type: this.selectOption.value});
     },
-    copyPrototype(prototype) {
-      copyToClipboard(this[prototype])
-        .then(() => {
-          this.$q.notify({
-            color: 'positive',
-            position: 'top-right',
-            message: this.$t('success'),
-          })
-        })
-        .catch(() => {
-          this.$q.notify({
-            color: 'negative',
-            position: 'top-right',
-            message: this.$t('failed'),
-          })
-        })
-    }
   },
   created() {
     this.generate()

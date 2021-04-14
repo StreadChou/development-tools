@@ -25,10 +25,10 @@
     </q-card-section>
     <q-separator/>
     <q-card-actions>
-      <q-btn flat color="primary" @click="runCommand">
+      <q-btn flat color="primary" @click="$utils.operationUtils.runCommand(generateCommand())">
         {{ $t('verb.runCommand') }}
       </q-btn>
-      <q-btn flat color="secondary" @click="copyCommand">
+      <q-btn flat color="secondary" @click="$utils.operationUtils.copyTxt(generateCommand())">
         {{ $t('verb.clickToCopy') }}
       </q-btn>
     </q-card-actions>
@@ -36,10 +36,6 @@
 </template>
 
 <script>
-import {copyToClipboard} from "quasar";
-
-const child_process = require('child_process');
-
 export default {
   name: "FastKillProcess",
   data() {
@@ -48,45 +44,8 @@ export default {
     }
   },
   methods: {
-    runCommand() {
-      let command = this.generateCommandForMac();
-      child_process.exec(command, (error, stdout, stderr) => {
-        if (!!error) {
-          this.$q.notify({
-            color: 'negative',
-            position: 'top-right',
-            message: error.toString()
-          })
-        } else {
-          this.$q.notify({
-            color: 'positive',
-            position: 'top-right',
-            message: this.$t('success'),
-          })
-        }
-      });
-    },
-    copyCommand() {
-      let command = this.generateCommandForMac();
-      copyToClipboard(command)
-        .then(() => {
-          this.$q.notify({
-            color: 'positive',
-            position: 'top-right',
-            message: this.$t('success'),
-          })
-        })
-        .catch(() => {
-          this.$q.notify({
-            color: 'negative',
-            position: 'top-right',
-            message: this.$t('failed'),
-          })
-        })
-    },
-
-    // generate mac command
-    generateCommandForMac() {
+    // generate mac command, todo platform
+    generateCommand() {
       return `ps -ef | grep '${this.process}' | awk '{print $2}' | xargs kill -9`;
     }
   }
