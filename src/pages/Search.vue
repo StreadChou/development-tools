@@ -62,7 +62,6 @@ export default {
           this.searchComponents.push(ele.component);
         }
       })
-      console.log(this.searchComponents);
     },
     componentMapSearch(ele) {
       let locale = this.$i18n.locale;
