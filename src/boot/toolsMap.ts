@@ -48,7 +48,6 @@ class ToolsMap {
     toolMap.path = path
     this.languageList.forEach(ele => {
       toolMap.keywords[ele] = [];
-      console.log(toolsI18nPrefix + path + ".keywords")
       if (i18n.te(toolsI18nPrefix + path + ".keywords", ele)) {
         toolMap.keywords[ele] = i18n.t(toolsI18nPrefix + path + ".keywords", ele);
       }
