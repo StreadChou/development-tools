@@ -10,7 +10,7 @@
           {{ $t('components.tools.timeTools.TimestampTools.nowTimestamp') }}
           ({{ $t('verb.clickToCopy') }}):
         </span>
-        <q-btn flat color="primary" :label="nowTimestamp" @click="$utils.operationUtils.copyTxt(nowTimestamp)"/>
+        <q-btn flat color="primary" :label="nowTimestamp" @click="$utils.operation.copyTxt(nowTimestamp)"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">{{ $t('components.tools.timeTools.TimestampTools.timestampToTime') }}:</span>
@@ -20,7 +20,7 @@
           </template>
         </q-input>
         <q-btn flat color="primary" :label="this.timestampResult"
-               @click="$utils.operationUtils.copyTxt(timestampResult)"/>
+               @click="$utils.operation.copyTxt(timestampResult)"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">{{ $t('components.tools.timeTools.TimestampTools.timeToTimestamp') }}:</span>
@@ -29,7 +29,7 @@
             <q-btn color="primary" :label="$t('verb.transform')" @click="changeTime"/>
           </template>
         </q-input>
-        <q-btn flat dense color="primary" :label="timeResult" @click="$utils.operationUtils.copyTxt(timeResult)"/>
+        <q-btn flat dense color="primary" :label="timeResult" @click="$utils.operation.copyTxt(timeResult)"/>
       </div>
     </q-card-section>
   </q-card>

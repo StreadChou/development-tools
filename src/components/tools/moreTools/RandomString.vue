@@ -44,7 +44,7 @@
           ({{ $t('verb.clickToCopy') }}):
         </span>
         <q-btn flat color="primary" style="text-transform: none!important;" :label="result"
-               @click="$utils.operationUtils.copyTxt(result)"/>
+               @click="$utils.operation.copyTxt(result)"/>
       </div>
     </q-card-section>
   </q-card>

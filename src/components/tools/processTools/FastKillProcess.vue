@@ -25,10 +25,10 @@
     </q-card-section>
     <q-separator/>
     <q-card-actions>
-      <q-btn flat color="primary" @click="$utils.operationUtils.runCommand(generateCommand())">
+      <q-btn flat color="primary" @click="$utils.operation.runCommand(generateCommand())">
         {{ $t('verb.runCommand') }}
       </q-btn>
-      <q-btn flat color="secondary" @click="$utils.operationUtils.copyTxt(generateCommand())">
+      <q-btn flat color="secondary" @click="$utils.operation.copyTxt(generateCommand())">
         {{ $t('verb.clickToCopy') }}
       </q-btn>
     </q-card-actions>

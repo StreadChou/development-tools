@@ -1,10 +1,12 @@
 import {boot} from 'quasar/wrappers';
 import operationUtils from "boot/utils/operationUtils";
 import notifyUtils from "boot/utils/notifyUtils";
+import favouriteUtils from "boot/utils/favouriteUtils";
 
 export const utils = {
-  operationUtils: operationUtils,
-  notifyUtils: notifyUtils,
+  operation: operationUtils,
+  notify: notifyUtils,
+  favourite: favouriteUtils,
 }
 
 
