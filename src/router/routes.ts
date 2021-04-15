@@ -7,6 +7,7 @@ const routes: RouteConfig[] = [
     children: [
       {path: '', component: () => import('pages/Index.vue')},
       {path: 'search', component: () => import('pages/Search.vue')},
+      {path: 'favourite', component: () => import('pages/Favourite.vue')},
       {path: 'timeTools/index', component: () => import('pages/timeTools/Index.vue')},
       {path: 'processTools/Index', component: () => import('pages/processTools/Index.vue')},
       {path: 'setting/Index', component: () => import('pages/setting/Index.vue')},

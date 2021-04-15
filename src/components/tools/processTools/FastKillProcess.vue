@@ -1,13 +1,6 @@
 <template>
   <q-card bordered class="full-width">
-    <q-card-section>
-      <div class="text-h6">
-        {{ $t('components.tools.processTools.FastKillProcess.title') }}
-      </div>
-      <div class="text-subtitle2">
-        {{ $t('components.tools.processTools.FastKillProcess.subtitle') }}
-      </div>
-    </q-card-section>
+    <DefaultToolsHeader :i18n-prefix="$options.i18nPrefix" :component-name="$options.name"></DefaultToolsHeader>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
@@ -21,7 +14,7 @@
       </div>
     </q-card-section>
     <q-card-section class="q-gutter-sm q-pl-lg">
-      {{ $t('noun.tips') }}:{{ $t('components.tools.processTools.FastKillProcess.tips') }}
+      {{ $t('noun.tips') }}:{{ $t($options.i18nPrefix + '.tips') }}
     </q-card-section>
     <q-separator/>
     <q-card-actions>
@@ -36,8 +29,11 @@
 </template>
 
 <script>
+import DefaultToolsHeader from "../../view/DefaultToolsHeader";
 export default {
   name: "FastKillProcess",
+  components: {DefaultToolsHeader},
+  i18nPrefix: "components.tools.processTools.FastKillProcess",
   data() {
     return {
       process: 'node',

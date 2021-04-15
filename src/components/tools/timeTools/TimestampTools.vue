@@ -1,19 +1,17 @@
 <template>
   <q-card bordered class="full-width">
-    <q-card-section>
-      <div class="text-h6">{{ $t('components.tools.timeTools.TimestampTools.title') }}</div>
-    </q-card-section>
+    <DefaultToolsHeader :i18n-prefix="$options.i18nPrefix" :component-name="$options.name"></DefaultToolsHeader>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
         <span class="row items-center">
-          {{ $t('components.tools.timeTools.TimestampTools.nowTimestamp') }}
+          {{ $t($options.i18nPrefix + '.nowTimestamp') }}
           ({{ $t('verb.clickToCopy') }}):
         </span>
         <q-btn flat color="primary" :label="nowTimestamp" @click="$utils.operation.copyTxt(nowTimestamp)"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
-        <span class="row items-center">{{ $t('components.tools.timeTools.TimestampTools.timestampToTime') }}:</span>
+        <span class="row items-center">{{ $t($options.i18nPrefix + '.timestampToTime') }}:</span>
         <q-input standout="" dense v-model="timestampInput" :suffix="$t('noun.unixTimestamp')">
           <template v-slot:after>
             <q-btn color="primary" :label="$t('verb.transform')" @click="changeTimestamp"/>
@@ -23,7 +21,7 @@
                @click="$utils.operation.copyTxt(timestampResult)"/>
       </div>
       <div class="row items-start q-gutter-sm items-stretch">
-        <span class="row items-center">{{ $t('components.tools.timeTools.TimestampTools.timeToTimestamp') }}:</span>
+        <span class="row items-center">{{ $t($options.i18nPrefix + '.timeToTimestamp') }}:</span>
         <q-input standout="" dense v-model="timeInput" :suffix="this.timeInputType">
           <template v-slot:after>
             <q-btn color="primary" :label="$t('verb.transform')" @click="changeTime"/>
@@ -37,9 +35,12 @@
 
 <script>
 import moment from 'moment'
+import DefaultToolsHeader from "../../view/DefaultToolsHeader";
 
 export default {
   name: "TimestampTools",
+  i18nPrefix: "components.tools.timeTools.TimestampTools",
+  components: {DefaultToolsHeader},
   data() {
     return {
       nowTimestamp: 0,

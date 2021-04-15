@@ -1,15 +1,11 @@
 <template>
   <q-card bordered class="full-width">
-    <q-card-section>
-      <div class="text-h6">
-        {{ $t('components.tools.moreTools.RandomString.title') }}
-      </div>
-    </q-card-section>
+    <DefaultToolsHeader :i18n-prefix="$options.i18nPrefix" :component-name="$options.name"></DefaultToolsHeader>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
         <q-select class="col" standout="" dense
-                  :label="$t('components.tools.moreTools.RandomString.selectLabel')"
+                  :label="$t($options.i18nPrefix + '.selectLabel')"
                   :options="options" v-model="selectOption"
                   :display-value="`${selectOption.label}: ${selectOption.description}`"
         >
@@ -51,49 +47,52 @@
 </template>
 
 <script>
+import DefaultToolsHeader from "../../view/DefaultToolsHeader";
 const cryptoRandomString = require('crypto-random-string');
 
 
 export default {
   name: "RandomString",
+  i18nPrefix: "components.tools.moreTools.RandomString",
+  components: {DefaultToolsHeader},
   data() {
     return {
       options: [
         {
           label: 'base64',
           value: 'base64',
-          description: this.$t('components.tools.moreTools.RandomString.base64Des'),
+          description: this.$t(this.$options.i18nPrefix + '.base64Des'),
         },
         {
           label: 'url-safe',
           value: 'url-safe',
-          description: this.$t('components.tools.moreTools.RandomString.urlSafeDes'),
+          description: this.$t(this.$options.i18nPrefix + '.urlSafeDes'),
         },
         {
           label: 'numeric',
           value: 'numeric',
-          description: this.$t('components.tools.moreTools.RandomString.numericDes'),
+          description: this.$t(this.$options.i18nPrefix + '.numericDes'),
         },
         {
           label: 'distinguishable',
           value: 'distinguishable',
-          description: this.$t('components.tools.moreTools.RandomString.distinguishableDes'),
+          description: this.$t(this.$options.i18nPrefix + '.distinguishableDes'),
         },
         {
           label: 'ascii-printable',
           value: 'ascii-printable',
-          description: this.$t('components.tools.moreTools.RandomString.asciiPrintableDes'),
+          description: this.$t(this.$options.i18nPrefix + '.asciiPrintableDes'),
         },
         {
           label: 'alphanumeric',
           value: 'alphanumeric',
-          description: this.$t('components.tools.moreTools.RandomString.alphanumericDes'),
+          description: this.$t(this.$options.i18nPrefix + '.alphanumericDes'),
         }
       ],
       selectOption: {
         label: 'alphanumeric',
         value: 'alphanumeric',
-        description: this.$t('components.tools.moreTools.RandomString.alphanumericDes'),
+        description: this.$t(this.$options.i18nPrefix + '.alphanumericDes'),
       },
       length: 10,
       result: "",

@@ -24,7 +24,7 @@
             <q-item-section>{{ $t('page.navigation.home') }}</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="/favourite">
             <q-item-section avatar>
               <q-icon name="star"/>
             </q-item-section>
