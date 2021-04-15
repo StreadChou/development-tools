@@ -35,7 +35,6 @@
 import TimestampTools from "../components/tools/timeTools/TimestampTools";
 import FastKillProcess from "../components/tools/processTools/FastKillProcess";
 import RandomString from "../components/tools/moreTools/RandomString";
-import ComponentMap from "../ComponentMap";
 
 export default {
   name: "Search",
@@ -56,27 +55,8 @@ export default {
       this.nowSearch = this.searchInput;
       this.searchComponents = [];
       if (!this.nowSearch) return false;
-
-      Object.values(ComponentMap).forEach(ele => {
-        if (this.componentMapSearch(ele)) {
-          this.searchComponents.push(ele.component);
-        }
-      })
+      this.searchComponents = this.$toolsMap.searchKeywords(this.nowSearch);
     },
-    componentMapSearch(ele) {
-      let locale = this.$i18n.locale;
-      let defaultLocale = "en-us";
-      let result = ele.keywords[locale].some((keyword) => {
-        return keyword.indexOf(this.nowSearch) !== -1
-      })
-      if (!result && locale !== defaultLocale) {
-        result = ele.keywords[defaultLocale].some((keyword) => {
-          return keyword.indexOf(this.nowSearch) !== -1
-        })
-      }
-      return result;
-
-    }
   },
   created() {
     this.searchInput = this.$route.query.search
