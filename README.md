@@ -18,5 +18,10 @@ quasar dev -m electron
 quasar build -m electron
 ```
 
+### Run artisan command
+```bash
+node artisan help
+```
+
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).

@@ -5,7 +5,7 @@ class Artisan {
   artisanList = {};
 
   constructor() {
-    // this.registerArtisan(artisanLanguage) language artisan is not ready
+    this.registerArtisan(artisanLanguage)
   }
 
   static getInstance() {
@@ -20,7 +20,7 @@ class Artisan {
   runArtisan() {
     let argv = process.argv.slice();
     let command = argv[2];
-    if (!this.artisanList.hasOwnProperty(command)) {
+    if (command === "help" || !this.artisanList.hasOwnProperty(command)) {
       return this.showHelp();
     }
     argv = argv.slice(2, argv.length);

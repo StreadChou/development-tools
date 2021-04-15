@@ -45,9 +45,14 @@ class ArtisanBase {
     }
   }
 
-  firstToUpper1(str) {
+  firstToUpper(str) {
+    return str.trim().replace(str[0], str[0].toUpperCase());
+  }
+
+  onlyFirstToUpper(str) {
     return str.trim().toLowerCase().replace(str[0], str[0].toUpperCase());
   }
+
 }
 
 module.exports = ArtisanBase
