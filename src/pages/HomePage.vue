@@ -27,7 +27,8 @@
 <script>
 
 export default {
-  name: "PageIndex",
+  name: "HomePage",
+  i18nPrefix: "page.HomePage",
   data() {
     return {
       searchContent: ""

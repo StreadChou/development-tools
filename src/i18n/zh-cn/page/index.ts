@@ -1,15 +1,19 @@
-import setting from "./setting";
-import search from "./search";
+import SettingPage from "./SettingPage";
+import SearchPage from "./SearchPage";
+import FavouritePage from "./FavouritePage";
+import HomePage from "./HomePage";
+
+import MoreToolsPage from "./MoreToolsPage";
+import ProcessToolsPage from "./ProcessToolsPage";
+import TimeToolsPage from "./TimeToolsPage";
 
 export default {
-  navigation: {
-    home: "主页",
-    favourite: "我的收藏",
-    timeTools: "时间工具",
-    processTools: "进程工具",
-    moreTools: "更多工具",
-    setting: "应用设置",
-  },
-  setting: setting,
-  search: search,
+  SettingPage: SettingPage,
+  SearchPage: SearchPage,
+  FavouritePage: FavouritePage,
+  HomePage: HomePage,
+
+  ProcessToolsPage: ProcessToolsPage,
+  TimeToolsPage: TimeToolsPage,
+  MoreToolsPage: MoreToolsPage,
 }

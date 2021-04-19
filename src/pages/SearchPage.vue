@@ -37,7 +37,8 @@ import FastKillProcess from "../components/tools/processTools/FastKillProcess";
 import RandomString from "../components/tools/moreTools/RandomString";
 
 export default {
-  name: "Search",
+  name: "SearchPage",
+  i18nPrefix: "page.SearchPage",
   components: {
     TimestampTools,
     FastKillProcess,

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="q-px-lg q-pb-lg full-width" v-for="comp in showComponents">
-      <div :is="comp"></div>
+    <div class="full-width" v-for="comp in showComponents">
+      <div class="q-mb-lg" :is="comp"></div>
     </div>
   </div>
 </template>

@@ -1,5 +1,6 @@
 <template>
   <q-page class="full-height full-width">
+    <DefaultPageHeader :i18n-prefix="$options.i18nPrefix" :page-name="$options.name"></DefaultPageHeader>
     <div class="row full-width q-pa-lg">
       <FastKillProcess></FastKillProcess>
     </div>
@@ -8,10 +9,12 @@
 
 <script>
 import FastKillProcess from "../../components/tools/processTools/FastKillProcess";
+import DefaultPageHeader from "../../components/view/DefaultPageHeader";
 
 export default {
-  name: "ProcessToolsIndex",
-  components: {FastKillProcess}
+  name: "ProcessToolsPage",
+  i18nPrefix: "page.ProcessToolsPage",
+  components: {DefaultPageHeader, FastKillProcess}
 }
 </script>
 

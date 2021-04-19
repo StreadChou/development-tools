@@ -1,15 +1,18 @@
-import setting from "./setting";
-import search from "./search";
+import SettingPage from "./SettingPage";
+import SearchPage from "./SearchPage";
+import FavouritePage from "./FavouritePage";
+import HomePage from "./HomePage";
+
+import MoreToolsPage from "./MoreToolsPage";
+import ProcessToolsPage from "./ProcessToolsPage";
+import TimeToolsPage from "./TimeToolsPage";
 
 export default {
-  navigation: {
-    home: "Home",
-    favourite: "Favourite",
-    timeTools: "Time Tools",
-    processTools: "Process Tools",
-    moreTools: "More Tools",
-    setting: "Setting",
-  },
-  setting: setting,
-  search: search,
+  SettingPage: SettingPage,
+  SearchPage: SearchPage,
+  FavouritePage: FavouritePage,
+  HomePage: HomePage,
+  ProcessToolsPage: ProcessToolsPage,
+  TimeToolsPage: TimeToolsPage,
+  MoreToolsPage: MoreToolsPage,
 }
