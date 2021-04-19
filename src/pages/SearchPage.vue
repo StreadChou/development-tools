@@ -22,7 +22,7 @@
     </div>
   </q-page>
   <q-page v-else class="row items-center justify-evenly">
-    <q-input class="col-6" standout="" :label="$t('tip.enterSearchContent')" v-on:keyup.enter="search" dense
+    <q-input class="col-6" standout="" :label="$t('tips.enterSearchContent')" v-on:keyup.enter="search" dense
              v-model="searchInput">
       <template v-slot:after>
         <q-btn color="primary" :label="$t('verb.search')" @click="search"/>
