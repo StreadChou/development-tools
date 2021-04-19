@@ -1,5 +1,5 @@
 <template>
-  <q-card bordered class="full-width">
+  <q-card flat bordered class="full-width">
     <DefaultToolsHeader :i18n-prefix="$options.i18nPrefix" :component-name="$options.name"></DefaultToolsHeader>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">

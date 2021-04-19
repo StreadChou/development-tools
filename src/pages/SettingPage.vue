@@ -2,7 +2,7 @@
   <q-page class="full-height full-width">
     <DefaultPageHeader :i18n-prefix="$options.i18nPrefix" :page-name="$options.name"></DefaultPageHeader>
     <div class="row full-width q-pa-lg">
-      <q-card bordered class="full-width">
+      <q-card flat bordered class="full-width">
         <q-card-section class="q-pl-lg">
           <LanguageSetting></LanguageSetting>
         </q-card-section>

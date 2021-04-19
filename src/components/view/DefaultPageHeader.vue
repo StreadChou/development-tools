@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary text-white">
+  <div class="bg-primary text-white">
     <q-toolbar>
       <q-btn flat round dense icon="assignment_ind" />
       <q-toolbar-title>{{ $t(this.i18nPrefix + '.title') }}</q-toolbar-title>

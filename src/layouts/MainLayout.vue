@@ -11,11 +11,9 @@
 
       :width="200"
       :breakpoint="500"
-      bordered
-      content-class="bg-grey-3"
     >
-      <q-scroll-area class="fit">
-        <q-list padding>
+      <q-scroll-area class="fit bg-blue-grey-8 text-white">
+        <q-list class="bg-blue-grey-10" padding>
 
           <q-item clickable v-ripple to="/">
             <q-item-section avatar>
@@ -52,9 +50,9 @@
             <q-item-section>{{ $t('page.MoreToolsPage.navigation') }}</q-item-section>
           </q-item>
 
-
+        </q-list>
           <q-separator/>
-
+        <q-list padding>
           <q-item clickable v-ripple to="/setting/Index">
             <q-item-section avatar>
               <q-icon name="settings"/>

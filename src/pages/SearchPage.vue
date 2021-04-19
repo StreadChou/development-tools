@@ -3,7 +3,7 @@
     <div class="q-pt-lg q-px-lg">
       <q-input standout="" :label="$t('tips.enterSearchContent')" v-on:keyup.enter="search" dense v-model="searchInput">
         <template v-slot:after>
-          <q-btn color="primary" :label="$t('verb.search')" @click="search"/>
+          <q-btn color="primary" unelevated :label="$t('verb.search')" @click="search"/>
         </template>
       </q-input>
     </div>
@@ -25,7 +25,7 @@
     <q-input class="col-6" standout="" :label="$t('tips.enterSearchContent')" v-on:keyup.enter="search" dense
              v-model="searchInput">
       <template v-slot:after>
-        <q-btn color="primary" :label="$t('verb.search')" @click="search"/>
+        <q-btn color="primary" unelevated :label="$t('verb.search')" @click="search"/>
       </template>
     </q-input>
   </q-page>

@@ -1,5 +1,5 @@
 <template>
-  <q-card bordered class="full-width">
+  <q-card flat bordered class="full-width">
     <DefaultToolsHeader :i18n-prefix="$options.i18nPrefix" :component-name="$options.name"></DefaultToolsHeader>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
@@ -14,7 +14,7 @@
         <span class="row items-center">{{ $t($options.i18nPrefix + '.timestampToTime') }}:</span>
         <q-input standout="" dense v-model="timestampInput" :suffix="$t('noun.unixTimestamp')">
           <template v-slot:after>
-            <q-btn color="primary" :label="$t('verb.transform')" @click="changeTimestamp"/>
+            <q-btn unelevated color="primary" :label="$t('verb.transform')" @click="changeTimestamp"/>
           </template>
         </q-input>
         <q-btn flat color="primary" :label="this.timestampResult"
@@ -24,7 +24,7 @@
         <span class="row items-center">{{ $t($options.i18nPrefix + '.timeToTimestamp') }}:</span>
         <q-input standout="" dense v-model="timeInput" :suffix="this.timeInputType">
           <template v-slot:after>
-            <q-btn color="primary" :label="$t('verb.transform')" @click="changeTime"/>
+            <q-btn unelevated color="primary" :label="$t('verb.transform')" @click="changeTime"/>
           </template>
         </q-input>
         <q-btn flat dense color="primary" :label="timeResult" @click="$utils.operation.copyTxt(timeResult)"/>

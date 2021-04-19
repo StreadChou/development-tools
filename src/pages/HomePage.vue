@@ -4,7 +4,7 @@
       <q-input standout="" :label="$t('tips.enterSearchContent')" v-on:keyup.enter="search" dense
                v-model="searchContent">
         <template v-slot:after>
-          <q-btn color="primary" :label="$t('verb.search')" @click="search"/>
+          <q-btn color="primary" unelevated :label="$t('verb.search')" @click="search"/>
         </template>
       </q-input>
     </div>

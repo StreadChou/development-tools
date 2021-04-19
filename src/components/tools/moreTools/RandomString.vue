@@ -1,5 +1,5 @@
 <template>
-  <q-card bordered class="full-width">
+  <q-card flat bordered class="full-width">
     <DefaultToolsHeader :i18n-prefix="$options.i18nPrefix" :component-name="$options.name"></DefaultToolsHeader>
     <q-separator inset=""/>
     <q-card-section class="q-gutter-sm q-pl-lg">
@@ -31,7 +31,7 @@
       </div>
     </q-card-section>
     <q-card-section class="q-pl-lg">
-      <q-btn class="full-width" color="primary" :label="$t('verb.generate')" @click="generate"/>
+      <q-btn unelevated class="full-width" color="primary" :label="$t('verb.generate')" @click="generate"/>
     </q-card-section>
     <q-card-section class="q-gutter-sm q-pl-lg">
       <div class="row items-start q-gutter-sm items-stretch">
