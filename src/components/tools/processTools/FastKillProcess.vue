@@ -9,7 +9,7 @@
         </span>
         <q-input standout="" dense v-model="process" clearable></q-input>
         <span class="row items-center">
-          {{ $t('tips.youWillRun') }}: ps -ef | grep '{{ process }}' | awk '{print $2}' | xargs kill -9
+          {{ $t('tips.youWillRun') }}: {{ command }}
         </span>
       </div>
     </q-card-section>
@@ -37,6 +37,11 @@ export default {
   data() {
     return {
       process: 'node',
+    }
+  },
+  computed: {
+    command: function () {
+      return this.generateCommand();
     }
   },
   methods: {
