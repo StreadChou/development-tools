@@ -1,6 +1,6 @@
 <template>
   <q-page v-else class="full-width full-height">
-    <DefaultPageHeader :i18n-prefix="$options.i18nPrefix" :page-name="$options.name"></DefaultPageHeader>
+    <DefaultPageHeader :i18n-prefix="$options.i18nPrefix" :page-name="$options.name" icon="star"></DefaultPageHeader>
     <ToolsList class="q-pa-lg" :componentsList="favouriteList"></ToolsList>
   </q-page>
 </template>

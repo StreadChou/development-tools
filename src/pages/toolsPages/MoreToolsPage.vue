@@ -1,6 +1,6 @@
 <template>
   <q-page class="full-height full-width">
-    <DefaultPageHeader :i18n-prefix="$options.i18nPrefix" :page-name="$options.name"></DefaultPageHeader>
+    <DefaultPageHeader :i18n-prefix="$options.i18nPrefix" :page-name="$options.name" icon="more"></DefaultPageHeader>
     <div class="row full-width q-pa-lg">
       <RandomString></RandomString>
     </div>
