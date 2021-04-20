@@ -13,6 +13,7 @@ const routes: RouteConfig[] = [
       {path: 'timeTools/index', component: () => import('pages/toolsPages/TimeToolsPage.vue')},
       {path: 'processTools/Index', component: () => import('pages/toolsPages/ProcessToolsPage.vue')},
       {path: 'moreTools/index', component: () => import('pages/toolsPages/MoreToolsPage.vue')},
+      {path: 'encryptDecryptTools/index', component: () => import('pages/toolsPages/EncryptDecryptToolsPage.vue')},
     ]
   },
 

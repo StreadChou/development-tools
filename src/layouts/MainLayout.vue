@@ -9,7 +9,7 @@
       @mouseout="miniState = true"
       mini-to-overlay
 
-      :width="200"
+      :width="250"
       :breakpoint="500"
     >
       <q-scroll-area class="fit bg-blue-grey-8 text-white">
@@ -41,6 +41,13 @@
               <q-icon name="schema"/>
             </q-item-section>
             <q-item-section>{{ $t('page.ProcessToolsPage.navigation') }}</q-item-section>
+          </q-item>
+
+          <q-item clickable v-ripple to="/encryptDecryptTools/index">
+            <q-item-section avatar>
+              <q-icon name="lock"/>
+            </q-item-section>
+            <q-item-section>{{ $t('page.EncryptDecryptToolsPage.navigation') }}</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple to="/moreTools/index">
