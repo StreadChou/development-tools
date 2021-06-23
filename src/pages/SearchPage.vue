@@ -8,7 +8,7 @@
       </q-input>
     </div>
     <div class="row full-width items-center justify-evenly search-layout-middle q-py-sm shadow-1">
-      <p class="q-my-none">{{ $t('page.search.youAreSearching') }} <strong>{{ nowSearch }}</strong></p>
+      <p class="q-my-none">{{ $t('page.SearchPage.youAreSearching') }} <strong>{{ nowSearch }}</strong></p>
     </div>
     <div v-if="searchComponents.length" class="row scroll-y full-width search-layout-bottom q-pt-lg bg-grey-4">
       <div class="q-px-lg q-pb-lg full-width" v-for="comp in searchComponents">
