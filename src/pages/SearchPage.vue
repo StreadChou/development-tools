@@ -17,7 +17,7 @@
     </div>
     <div v-else class="row scroll-y full-width search-layout-bottom q-pt-lg bg-grey-4">
       <div class="q-px-lg q-pb-lg full-width">
-        {{ $t('page.search.noResult') }}
+        {{ $t('page.SearchPage.noResult') }}
       </div>
     </div>
   </q-page>
