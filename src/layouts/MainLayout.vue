@@ -58,7 +58,7 @@
           </q-item>
 
         </q-list>
-          <q-separator/>
+        <q-separator/>
         <q-list padding>
           <q-item clickable v-ripple to="/setting/Index">
             <q-item-section avatar>
@@ -73,6 +73,23 @@
     <q-page-container>
       <router-view></router-view>
     </q-page-container>
+
+    <q-dialog v-model="searchFlag">
+      <q-card style="min-width: 350px">
+        <q-card-section>
+          <div class="text-h6">Your SearchContent</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          <q-input dense v-model="searchContent" autofocus @keyup.enter="search"/>
+        </q-card-section>
+
+        <q-card-actions align="right" class="text-primary">
+          <q-btn flat label="Cancel" v-close-popup/>
+          <q-btn flat label="Search" @click="search" v-close-popup/>
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-layout>
 </template>
 <script>
@@ -80,7 +97,9 @@ export default {
   data() {
     return {
       drawer: false,
-      miniState: true
+      miniState: true,
+      searchFlag: false,
+      searchContent: ""
     }
   },
   methods: {
@@ -106,7 +125,27 @@ export default {
       if (process.env.MODE === 'electron') {
         this.$q.electron.remote.BrowserWindow.getFocusedWindow().close()
       }
-    }
+    },
+
+    search() {
+      this.searchFlag = false;
+      this.$router.push({
+        path: '/search',
+        query: {
+          search: this.searchContent,
+        }
+      });
+    },
+
+  },
+  created() {
+    this.$utils.hotKeys.listenKeyBoard();
+    this.$utils.hotKeys.registerHotKey(() => {
+      this.searchFlag = true;
+      this.searchContent = "";
+    }, (keyBoardEvent) => {
+      return keyBoardEvent.shiftKey && keyBoardEvent.code === "KeyG";
+    });
   }
 }
 </script>
